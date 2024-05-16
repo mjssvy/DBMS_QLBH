@@ -33,5 +33,16 @@ namespace QUANLYBANHANG.Properties {
                 return ((string)(this["QTHCSDLConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=msi;Initial Catalog=LAB3;Integrated Security=True;Encrypt=True;TrustS" +
+            "erverCertificate=True")]
+        public string LAB3ConnectionString {
+            get {
+                return ((string)(this["LAB3ConnectionString"]));
+            }
+        }
     }
 }
