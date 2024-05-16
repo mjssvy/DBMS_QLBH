@@ -35,12 +35,14 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.rtb_MoTa = new System.Windows.Forms.RichTextBox();
+            this.txb_sl = new System.Windows.Forms.TextBox();
             this.txb_ban = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txb_mua = new System.Windows.Forms.TextBox();
             this.txb_nxb = new System.Windows.Forms.TextBox();
+            this.txb_MaSach = new System.Windows.Forms.TextBox();
             this.txb_TenSach = new System.Windows.Forms.TextBox();
             this.btn_XoaSach = new System.Windows.Forms.Button();
             this.btn_SuaSach = new System.Windows.Forms.Button();
@@ -59,8 +61,9 @@
             this.soLuongTonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayCapNhatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ghiChuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hangHoaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.hangHoaBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.lAB3DataSet = new QUANLYBANHANG.LAB3DataSet();
+            this.hangHoaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.panel_BillDetail = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -78,7 +81,7 @@
             this.giaBanDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chiTietDonHangBanBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.chiTietDonHangBanBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.txb_num = new System.Windows.Forms.TextBox();
             this.txb_banb = new System.Windows.Forms.TextBox();
             this.txb_muab = new System.Windows.Forms.TextBox();
@@ -89,6 +92,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.chiTietDonHangBanBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.panel_Bill = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -121,16 +125,14 @@
             this.donHangBanTableAdapter1 = new QUANLYBANHANG.LAB3DataSetTableAdapters.DonHangBanTableAdapter();
             this.chiTietDonHangBanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietDonHangBanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.txb_sl = new System.Windows.Forms.TextBox();
-            this.chiTietDonHangBanBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.hangHoaBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.txb_MaSach = new System.Windows.Forms.TextBox();
             this.panel_Item.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lAB3DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource2)).BeginInit();
             this.panel_BillDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource3)).BeginInit();
             this.panel_Bill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -143,8 +145,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -219,6 +219,14 @@
             this.rtb_MoTa.TabIndex = 30;
             this.rtb_MoTa.Text = "";
             // 
+            // txb_sl
+            // 
+            this.txb_sl.Location = new System.Drawing.Point(604, 122);
+            this.txb_sl.MaxLength = 50;
+            this.txb_sl.Name = "txb_sl";
+            this.txb_sl.Size = new System.Drawing.Size(256, 30);
+            this.txb_sl.TabIndex = 28;
+            // 
             // txb_ban
             // 
             this.txb_ban.Location = new System.Drawing.Point(604, 82);
@@ -270,6 +278,14 @@
             this.txb_nxb.Name = "txb_nxb";
             this.txb_nxb.Size = new System.Drawing.Size(213, 30);
             this.txb_nxb.TabIndex = 23;
+            // 
+            // txb_MaSach
+            // 
+            this.txb_MaSach.Location = new System.Drawing.Point(180, 79);
+            this.txb_MaSach.MaxLength = 50;
+            this.txb_MaSach.Name = "txb_MaSach";
+            this.txb_MaSach.Size = new System.Drawing.Size(213, 30);
+            this.txb_MaSach.TabIndex = 22;
             // 
             // txb_TenSach
             // 
@@ -383,6 +399,7 @@
             this.dgv_Sach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Sach.Size = new System.Drawing.Size(838, 343);
             this.dgv_Sach.TabIndex = 0;
+            this.dgv_Sach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellClick);
             // 
             // maHangDataGridViewTextBoxColumn
             // 
@@ -448,15 +465,20 @@
             this.ghiChuDataGridViewTextBoxColumn.Name = "ghiChuDataGridViewTextBoxColumn";
             this.ghiChuDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // hangHoaBindingSource2
+            // hangHoaBindingSource3
             // 
-            this.hangHoaBindingSource2.DataMember = "HangHoa";
-            this.hangHoaBindingSource2.DataSource = this.lAB3DataSet;
+            this.hangHoaBindingSource3.DataMember = "HangHoa";
+            this.hangHoaBindingSource3.DataSource = this.lAB3DataSet;
             // 
             // lAB3DataSet
             // 
             this.lAB3DataSet.DataSetName = "LAB3DataSet";
             this.lAB3DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hangHoaBindingSource2
+            // 
+            this.hangHoaBindingSource2.DataMember = "HangHoa";
+            this.hangHoaBindingSource2.DataSource = this.lAB3DataSet;
             // 
             // panel_BillDetail
             // 
@@ -638,10 +660,10 @@
             this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
             // 
-            // chiTietDonHangBanBindingSource3
+            // chiTietDonHangBanBindingSource4
             // 
-            this.chiTietDonHangBanBindingSource3.DataMember = "ChiTietDonHangBan";
-            this.chiTietDonHangBanBindingSource3.DataSource = this.lAB3DataSet;
+            this.chiTietDonHangBanBindingSource4.DataMember = "ChiTietDonHangBan";
+            this.chiTietDonHangBanBindingSource4.DataSource = this.lAB3DataSet;
             // 
             // txb_num
             // 
@@ -730,6 +752,11 @@
             this.label2.Size = new System.Drawing.Size(115, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Bill Detail ID";
+            // 
+            // chiTietDonHangBanBindingSource3
+            // 
+            this.chiTietDonHangBanBindingSource3.DataMember = "ChiTietDonHangBan";
+            this.chiTietDonHangBanBindingSource3.DataSource = this.lAB3DataSet;
             // 
             // panel_Bill
             // 
@@ -966,32 +993,6 @@
             this.chiTietDonHangBanBindingSource2.DataMember = "ChiTietDonHangBan";
             this.chiTietDonHangBanBindingSource2.DataSource = this.lAB3DataSet;
             // 
-            // txb_sl
-            // 
-            this.txb_sl.Location = new System.Drawing.Point(604, 122);
-            this.txb_sl.MaxLength = 50;
-            this.txb_sl.Name = "txb_sl";
-            this.txb_sl.Size = new System.Drawing.Size(256, 30);
-            this.txb_sl.TabIndex = 28;
-            // 
-            // chiTietDonHangBanBindingSource4
-            // 
-            this.chiTietDonHangBanBindingSource4.DataMember = "ChiTietDonHangBan";
-            this.chiTietDonHangBanBindingSource4.DataSource = this.lAB3DataSet;
-            // 
-            // hangHoaBindingSource3
-            // 
-            this.hangHoaBindingSource3.DataMember = "HangHoa";
-            this.hangHoaBindingSource3.DataSource = this.lAB3DataSet;
-            // 
-            // txb_MaSach
-            // 
-            this.txb_MaSach.Location = new System.Drawing.Point(180, 79);
-            this.txb_MaSach.MaxLength = 50;
-            this.txb_MaSach.Name = "txb_MaSach";
-            this.txb_MaSach.Size = new System.Drawing.Size(213, 30);
-            this.txb_MaSach.TabIndex = 22;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1011,11 +1012,13 @@
             this.panel_Item.ResumeLayout(false);
             this.panel_Item.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lAB3DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource2)).EndInit();
             this.panel_BillDetail.ResumeLayout(false);
             this.panel_BillDetail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource3)).EndInit();
             this.panel_Bill.ResumeLayout(false);
             this.panel_Bill.PerformLayout();
@@ -1029,8 +1032,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
