@@ -125,6 +125,7 @@
             this.donHangBanTableAdapter1 = new QUANLYBANHANG.LAB3DataSetTableAdapters.DonHangBanTableAdapter();
             this.chiTietDonHangBanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietDonHangBanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.chiTietDonHangBanBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.panel_Item.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource3)).BeginInit();
@@ -145,6 +146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -303,6 +305,7 @@
             this.btn_XoaSach.TabIndex = 20;
             this.btn_XoaSach.Text = "Delete";
             this.btn_XoaSach.UseVisualStyleBackColor = true;
+            this.btn_XoaSach.Click += new System.EventHandler(this.btn_XoaSach_Click);
             // 
             // btn_SuaSach
             // 
@@ -400,6 +403,7 @@
             this.dgv_Sach.Size = new System.Drawing.Size(838, 343);
             this.dgv_Sach.TabIndex = 0;
             this.dgv_Sach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellClick);
+            this.dgv_Sach.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellValueChanged);
             // 
             // maHangDataGridViewTextBoxColumn
             // 
@@ -517,9 +521,9 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(28, 169);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 25);
+            this.label19.Size = new System.Drawing.Size(73, 25);
             this.label19.TabIndex = 48;
-            this.label19.Text = "Item";
+            this.label19.Text = "Item ID";
             // 
             // label18
             // 
@@ -586,6 +590,7 @@
             this.button3.TabIndex = 40;
             this.button3.Text = "Add";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView1
             // 
@@ -601,7 +606,7 @@
             this.giaBanDataGridViewTextBoxColumn1,
             this.soLuongDataGridViewTextBoxColumn,
             this.thanhTienDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.chiTietDonHangBanBindingSource4;
+            this.dataGridView1.DataSource = this.chiTietDonHangBanBindingSource5;
             this.dataGridView1.Location = new System.Drawing.Point(16, 445);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -993,6 +998,11 @@
             this.chiTietDonHangBanBindingSource2.DataMember = "ChiTietDonHangBan";
             this.chiTietDonHangBanBindingSource2.DataSource = this.lAB3DataSet;
             // 
+            // chiTietDonHangBanBindingSource5
+            // 
+            this.chiTietDonHangBanBindingSource5.DataMember = "ChiTietDonHangBan";
+            this.chiTietDonHangBanBindingSource5.DataSource = this.lAB3DataSet;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1032,6 +1042,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1134,6 +1145,7 @@
         private System.Windows.Forms.BindingSource hangHoaBindingSource3;
         private System.Windows.Forms.BindingSource chiTietDonHangBanBindingSource4;
         private System.Windows.Forms.TextBox txb_MaSach;
+        private System.Windows.Forms.BindingSource chiTietDonHangBanBindingSource5;
     }
 }
 
