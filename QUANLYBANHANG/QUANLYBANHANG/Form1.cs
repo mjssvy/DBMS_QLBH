@@ -17,8 +17,10 @@ namespace QUANLYBANHANG
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             LoadData();
         }
+      
 
         private void LoadData()
         {
@@ -166,7 +168,6 @@ namespace QUANLYBANHANG
 
         private void btn_XoaSach_Click(object sender, EventArgs e)
         {//XOA
-         //XOA
             if (!string.IsNullOrEmpty(txb_MaSach.Text))
             { // Kiểm tra xem ID có tồn tại trong cơ sở dữ liệu không
                 con.Open();
@@ -227,22 +228,80 @@ namespace QUANLYBANHANG
             }
         }
 
-        private void dgv_Sach_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Check if a valid cell is changed
+            dataGridView1.CurrentRow.Selected = true;
+            txb_bdid.Text = dataGridView1.Rows[e.RowIndex].Cells["maChiTietDataGridViewTextBoxColumn"].Value.ToString();
+            textBox7.Text = dataGridView1.Rows[e.RowIndex].Cells["maDHDataGridViewTextBoxColumn"].Value.ToString();
+            textBox8.Text = dataGridView1.Rows[e.RowIndex].Cells["maHangDataGridViewTextBoxColumn1"].Value.ToString();
+            txb_muab.Text = dataGridView1.Rows[e.RowIndex].Cells["giaMuaDataGridViewTextBoxColumn1"].Value.ToString();
+            txb_banb.Text = dataGridView1.Rows[e.RowIndex].Cells["giaBanDataGridViewTextBoxColumn1"].Value.ToString();
+            txb_num.Text = dataGridView1.Rows[e.RowIndex].Cells["soLuongDataGridViewTextBoxColumn"].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells["thanhTienDataGridViewTextBoxColumn"].Value.ToString();
+
+        }
+        private void UpdateBill()
+        {//UPDATE
+            try
             {
-                string columnName = dgv_Sach.Columns[e.ColumnIndex].Name; // Get the column name of the changed cell
+                con.Open();
+                string query = "UPDATE [ChiTietDonHangBan] SET MaChiTiet = @MaChiTiet, MaDH = @MaDH, MaHang = @MaHang, GiaMua = @GiaMua, " +
+                               "GiaBan = @GiaBan, SoLuong = @SoLuong, ThanhTien = @ThanhTien WHERE MaChiTiet = @MaChiTiet";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@MaChiTiet", txb_bdid.Text);
+                cmd.Parameters.AddWithValue("@MaDH", textBox7.Text);
+                cmd.Parameters.AddWithValue("@MaHang", textBox8.Text);
+                cmd.Parameters.AddWithValue("@GiaMua", txb_muab.Text);
+                cmd.Parameters.AddWithValue("@GiaBan", txb_banb.Text);
+                cmd.Parameters.AddWithValue("@SoLuong", txb_num.Text);
+                cmd.Parameters.AddWithValue("@ThanhTien", textBox2.Text);
 
-                // Update the corresponding cell in dataGridView2 based on the column name
-                switch (columnName)
-                {
-                    case "GiaMua": // Example: if MaHang column is changed in dataGridView1, update MaHang column in dataGridView2
-                        dataGridView1.Rows[e.RowIndex].Cells["giaMuaDataGridViewTextBoxColumn1"].Value = dgv_Sach.Rows[e.RowIndex].Cells["giaMuaDataGridViewTextBoxColumn"].Value;
-                        break;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Bill updated successfully!");
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating bill: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
 
-                        break;
-                        // Add cases for other columns as needed
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UpdateBill();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //XOA
+            if (!string.IsNullOrEmpty(txb_bdid.Text))
+            { // Kiểm tra xem ID có tồn tại trong cơ sở dữ liệu không
+                con.Open();
+                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM [ChiTietDonHangBan] WHERE MaChiTiet = '" + txb_bdid.Text + "'", con);
+                int count = (int)checkCmd.ExecuteScalar();
+                con.Close();
+                if (count > 0)
+                {// ID tồn tại, thực hiện xóa
+                    con.Open();
+                    SqlCommand deleteCmd = new SqlCommand("DELETE FROM [ChiTietDonHangBan] WHERE MaChiTiet='" + txb_bdid.Text + "'", con);
+                    deleteCmd.ExecuteNonQuery();
+                    MessageBox.Show("Delete successfully");
+                    con.Close();
+                    LoadData();
                 }
+                else
+                {
+                    MessageBox.Show("ID không tồn tại trong cơ sở dữ liệu");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một bản ghi để xóa");
             }
         }
     }

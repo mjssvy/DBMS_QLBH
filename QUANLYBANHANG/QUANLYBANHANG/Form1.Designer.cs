@@ -81,7 +81,7 @@
             this.giaBanDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chiTietDonHangBanBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.chiTietDonHangBanBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.txb_num = new System.Windows.Forms.TextBox();
             this.txb_banb = new System.Windows.Forms.TextBox();
             this.txb_muab = new System.Windows.Forms.TextBox();
@@ -92,6 +92,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.chiTietDonHangBanBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietDonHangBanBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.panel_Bill = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -125,7 +126,6 @@
             this.donHangBanTableAdapter1 = new QUANLYBANHANG.LAB3DataSetTableAdapters.DonHangBanTableAdapter();
             this.chiTietDonHangBanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietDonHangBanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.chiTietDonHangBanBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.panel_Item.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource3)).BeginInit();
@@ -133,6 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource2)).BeginInit();
             this.panel_BillDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource3)).BeginInit();
             this.panel_Bill.SuspendLayout();
@@ -146,7 +147,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -402,8 +402,6 @@
             this.dgv_Sach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Sach.Size = new System.Drawing.Size(838, 343);
             this.dgv_Sach.TabIndex = 0;
-            this.dgv_Sach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellClick);
-            this.dgv_Sach.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellValueChanged);
             // 
             // maHangDataGridViewTextBoxColumn
             // 
@@ -559,6 +557,7 @@
             this.button1.TabIndex = 42;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -568,6 +567,7 @@
             this.button2.TabIndex = 41;
             this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -615,6 +615,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(509, 343);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // maChiTietDataGridViewTextBoxColumn
             // 
@@ -665,10 +666,10 @@
             this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
             // 
-            // chiTietDonHangBanBindingSource4
+            // chiTietDonHangBanBindingSource5
             // 
-            this.chiTietDonHangBanBindingSource4.DataMember = "ChiTietDonHangBan";
-            this.chiTietDonHangBanBindingSource4.DataSource = this.lAB3DataSet;
+            this.chiTietDonHangBanBindingSource5.DataMember = "ChiTietDonHangBan";
+            this.chiTietDonHangBanBindingSource5.DataSource = this.lAB3DataSet;
             // 
             // txb_num
             // 
@@ -757,6 +758,11 @@
             this.label2.Size = new System.Drawing.Size(115, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Bill Detail ID";
+            // 
+            // chiTietDonHangBanBindingSource4
+            // 
+            this.chiTietDonHangBanBindingSource4.DataMember = "ChiTietDonHangBan";
+            this.chiTietDonHangBanBindingSource4.DataSource = this.lAB3DataSet;
             // 
             // chiTietDonHangBanBindingSource3
             // 
@@ -998,11 +1004,6 @@
             this.chiTietDonHangBanBindingSource2.DataMember = "ChiTietDonHangBan";
             this.chiTietDonHangBanBindingSource2.DataSource = this.lAB3DataSet;
             // 
-            // chiTietDonHangBanBindingSource5
-            // 
-            this.chiTietDonHangBanBindingSource5.DataMember = "ChiTietDonHangBan";
-            this.chiTietDonHangBanBindingSource5.DataSource = this.lAB3DataSet;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1028,6 +1029,7 @@
             this.panel_BillDetail.ResumeLayout(false);
             this.panel_BillDetail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource3)).EndInit();
             this.panel_Bill.ResumeLayout(false);
@@ -1042,7 +1044,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
