@@ -8,7 +8,7 @@ namespace QUANLYBANHANG
 {
     public partial class Form1 : Form
     {
-        private SqlConnection con = new SqlConnection("Data Source=TRAMY_PC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        private SqlConnection con = new SqlConnection("Data Source=TRAMY_PC;Initial Catalog=LTCS;Integrated Security=True");
 
         public Form1()
         {

@@ -163,10 +163,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LAB3DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="LTCSDataSet.Designer.cs">
+    <Compile Include="LTCSDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LTCSDataSet.xsd</DependentUpon>
+      <DependentUpon>LTCSDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -199,16 +199,16 @@
     <None Include="LAB3DataSet.xss">
       <DependentUpon>LAB3DataSet.xsd</DependentUpon>
     </None>
-    <None Include="LTCSDataSet.xsc">
-      <DependentUpon>LTCSDataSet.xsd</DependentUpon>
+    <None Include="LTCSDataSet1.xsc">
+      <DependentUpon>LTCSDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="LTCSDataSet.xsd">
+    <None Include="LTCSDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LTCSDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>LTCSDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="LTCSDataSet.xss">
-      <DependentUpon>LTCSDataSet.xsd</DependentUpon>
+    <None Include="LTCSDataSet1.xss">
+      <DependentUpon>LTCSDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
