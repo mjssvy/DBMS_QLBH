@@ -53,6 +53,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgv_Sach = new System.Windows.Forms.DataGridView();
+            this.maHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNXBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaMuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuongTonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayCapNhatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ghiChuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hangHoaBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.lAB3DataSet = new QUANLYBANHANG.LAB3DataSet();
             this.hangHoaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
@@ -118,14 +126,6 @@
             this.donHangBanTableAdapter1 = new QUANLYBANHANG.LAB3DataSetTableAdapters.DonHangBanTableAdapter();
             this.chiTietDonHangBanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietDonHangBanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.maHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maNXBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giaMuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuongTonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayCapNhatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ghiChuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_Item.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource3)).BeginInit();
@@ -401,6 +401,62 @@
             this.dgv_Sach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Sach.Size = new System.Drawing.Size(838, 343);
             this.dgv_Sach.TabIndex = 0;
+            // 
+            // maHangDataGridViewTextBoxColumn
+            // 
+            this.maHangDataGridViewTextBoxColumn.DataPropertyName = "MaHang";
+            this.maHangDataGridViewTextBoxColumn.HeaderText = "MaHang";
+            this.maHangDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maHangDataGridViewTextBoxColumn.Name = "maHangDataGridViewTextBoxColumn";
+            // 
+            // tenHangDataGridViewTextBoxColumn
+            // 
+            this.tenHangDataGridViewTextBoxColumn.DataPropertyName = "TenHang";
+            this.tenHangDataGridViewTextBoxColumn.HeaderText = "TenHang";
+            this.tenHangDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenHangDataGridViewTextBoxColumn.Name = "tenHangDataGridViewTextBoxColumn";
+            // 
+            // maNXBDataGridViewTextBoxColumn
+            // 
+            this.maNXBDataGridViewTextBoxColumn.DataPropertyName = "MaNXB";
+            this.maNXBDataGridViewTextBoxColumn.HeaderText = "MaNXB";
+            this.maNXBDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNXBDataGridViewTextBoxColumn.Name = "maNXBDataGridViewTextBoxColumn";
+            // 
+            // giaMuaDataGridViewTextBoxColumn
+            // 
+            this.giaMuaDataGridViewTextBoxColumn.DataPropertyName = "GiaMua";
+            this.giaMuaDataGridViewTextBoxColumn.HeaderText = "GiaMua";
+            this.giaMuaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.giaMuaDataGridViewTextBoxColumn.Name = "giaMuaDataGridViewTextBoxColumn";
+            // 
+            // giaBanDataGridViewTextBoxColumn
+            // 
+            this.giaBanDataGridViewTextBoxColumn.DataPropertyName = "GiaBan";
+            this.giaBanDataGridViewTextBoxColumn.HeaderText = "GiaBan";
+            this.giaBanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
+            // 
+            // soLuongTonDataGridViewTextBoxColumn
+            // 
+            this.soLuongTonDataGridViewTextBoxColumn.DataPropertyName = "SoLuongTon";
+            this.soLuongTonDataGridViewTextBoxColumn.HeaderText = "SoLuongTon";
+            this.soLuongTonDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soLuongTonDataGridViewTextBoxColumn.Name = "soLuongTonDataGridViewTextBoxColumn";
+            // 
+            // ngayCapNhatDataGridViewTextBoxColumn
+            // 
+            this.ngayCapNhatDataGridViewTextBoxColumn.DataPropertyName = "NgayCapNhat";
+            this.ngayCapNhatDataGridViewTextBoxColumn.HeaderText = "NgayCapNhat";
+            this.ngayCapNhatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayCapNhatDataGridViewTextBoxColumn.Name = "ngayCapNhatDataGridViewTextBoxColumn";
+            // 
+            // ghiChuDataGridViewTextBoxColumn
+            // 
+            this.ghiChuDataGridViewTextBoxColumn.DataPropertyName = "GhiChu";
+            this.ghiChuDataGridViewTextBoxColumn.HeaderText = "GhiChu";
+            this.ghiChuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ghiChuDataGridViewTextBoxColumn.Name = "ghiChuDataGridViewTextBoxColumn";
             // 
             // hangHoaBindingSource3
             // 
@@ -938,62 +994,6 @@
             // 
             this.chiTietDonHangBanBindingSource2.DataMember = "ChiTietDonHangBan";
             this.chiTietDonHangBanBindingSource2.DataSource = this.lAB3DataSet;
-            // 
-            // maHangDataGridViewTextBoxColumn
-            // 
-            this.maHangDataGridViewTextBoxColumn.DataPropertyName = "MaHang";
-            this.maHangDataGridViewTextBoxColumn.HeaderText = "MaHang";
-            this.maHangDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maHangDataGridViewTextBoxColumn.Name = "maHangDataGridViewTextBoxColumn";
-            // 
-            // tenHangDataGridViewTextBoxColumn
-            // 
-            this.tenHangDataGridViewTextBoxColumn.DataPropertyName = "TenHang";
-            this.tenHangDataGridViewTextBoxColumn.HeaderText = "TenHang";
-            this.tenHangDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenHangDataGridViewTextBoxColumn.Name = "tenHangDataGridViewTextBoxColumn";
-            // 
-            // maNXBDataGridViewTextBoxColumn
-            // 
-            this.maNXBDataGridViewTextBoxColumn.DataPropertyName = "MaNXB";
-            this.maNXBDataGridViewTextBoxColumn.HeaderText = "MaNXB";
-            this.maNXBDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maNXBDataGridViewTextBoxColumn.Name = "maNXBDataGridViewTextBoxColumn";
-            // 
-            // giaMuaDataGridViewTextBoxColumn
-            // 
-            this.giaMuaDataGridViewTextBoxColumn.DataPropertyName = "GiaMua";
-            this.giaMuaDataGridViewTextBoxColumn.HeaderText = "GiaMua";
-            this.giaMuaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.giaMuaDataGridViewTextBoxColumn.Name = "giaMuaDataGridViewTextBoxColumn";
-            // 
-            // giaBanDataGridViewTextBoxColumn
-            // 
-            this.giaBanDataGridViewTextBoxColumn.DataPropertyName = "GiaBan";
-            this.giaBanDataGridViewTextBoxColumn.HeaderText = "GiaBan";
-            this.giaBanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
-            // 
-            // soLuongTonDataGridViewTextBoxColumn
-            // 
-            this.soLuongTonDataGridViewTextBoxColumn.DataPropertyName = "SoLuongTon";
-            this.soLuongTonDataGridViewTextBoxColumn.HeaderText = "SoLuongTon";
-            this.soLuongTonDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soLuongTonDataGridViewTextBoxColumn.Name = "soLuongTonDataGridViewTextBoxColumn";
-            // 
-            // ngayCapNhatDataGridViewTextBoxColumn
-            // 
-            this.ngayCapNhatDataGridViewTextBoxColumn.DataPropertyName = "NgayCapNhat";
-            this.ngayCapNhatDataGridViewTextBoxColumn.HeaderText = "NgayCapNhat";
-            this.ngayCapNhatDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngayCapNhatDataGridViewTextBoxColumn.Name = "ngayCapNhatDataGridViewTextBoxColumn";
-            // 
-            // ghiChuDataGridViewTextBoxColumn
-            // 
-            this.ghiChuDataGridViewTextBoxColumn.DataPropertyName = "GhiChu";
-            this.ghiChuDataGridViewTextBoxColumn.HeaderText = "GhiChu";
-            this.ghiChuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ghiChuDataGridViewTextBoxColumn.Name = "ghiChuDataGridViewTextBoxColumn";
             // 
             // Form1
             // 

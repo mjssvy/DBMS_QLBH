@@ -20,9 +20,9 @@ namespace QUANLYBANHANG {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("LTCSDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("LTCSDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class LTCSDataSet1 : global::System.Data.DataSet {
+    public partial class LTCSDataSet : global::System.Data.DataSet {
         
         private ChiTietDonHangBanDataTable tableChiTietDonHangBan;
         
@@ -30,11 +30,15 @@ namespace QUANLYBANHANG {
         
         private HangHoaDataTable tableHangHoa;
         
+        private global::System.Data.DataRelation relationFK_ChiTietDonHangBan_DonHangBan;
+        
+        private global::System.Data.DataRelation relationFK_ChiTietDonHangBan_HangHoa;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public LTCSDataSet1() {
+        public LTCSDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -45,7 +49,7 @@ namespace QUANLYBANHANG {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected LTCSDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected LTCSDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -157,7 +161,7 @@ namespace QUANLYBANHANG {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            LTCSDataSet1 cln = ((LTCSDataSet1)(base.Clone()));
+            LTCSDataSet cln = ((LTCSDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -242,14 +246,16 @@ namespace QUANLYBANHANG {
                     this.tableHangHoa.InitVars();
                 }
             }
+            this.relationFK_ChiTietDonHangBan_DonHangBan = this.Relations["FK_ChiTietDonHangBan_DonHangBan"];
+            this.relationFK_ChiTietDonHangBan_HangHoa = this.Relations["FK_ChiTietDonHangBan_HangHoa"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "LTCSDataSet1";
+            this.DataSetName = "LTCSDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/LTCSDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/LTCSDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableChiTietDonHangBan = new ChiTietDonHangBanDataTable();
@@ -258,6 +264,14 @@ namespace QUANLYBANHANG {
             base.Tables.Add(this.tableDonHangBan);
             this.tableHangHoa = new HangHoaDataTable();
             base.Tables.Add(this.tableHangHoa);
+            this.relationFK_ChiTietDonHangBan_DonHangBan = new global::System.Data.DataRelation("FK_ChiTietDonHangBan_DonHangBan", new global::System.Data.DataColumn[] {
+                        this.tableDonHangBan.MaDHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableChiTietDonHangBan.MaDHColumn}, false);
+            this.Relations.Add(this.relationFK_ChiTietDonHangBan_DonHangBan);
+            this.relationFK_ChiTietDonHangBan_HangHoa = new global::System.Data.DataRelation("FK_ChiTietDonHangBan_HangHoa", new global::System.Data.DataColumn[] {
+                        this.tableHangHoa.MaHangColumn}, new global::System.Data.DataColumn[] {
+                        this.tableChiTietDonHangBan.MaHangColumn}, false);
+            this.Relations.Add(this.relationFK_ChiTietDonHangBan_HangHoa);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -289,7 +303,7 @@ namespace QUANLYBANHANG {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            LTCSDataSet1 ds = new LTCSDataSet1();
+            LTCSDataSet ds = new LTCSDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -489,16 +503,22 @@ namespace QUANLYBANHANG {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ChiTietDonHangBanRow AddChiTietDonHangBanRow(string MaChiTiet, string MaDH, string MaHang, string GiaMua, string GiaBan, string SoLuong, string ThanhTien) {
+            public ChiTietDonHangBanRow AddChiTietDonHangBanRow(string MaChiTiet, DonHangBanRow parentDonHangBanRowByFK_ChiTietDonHangBan_DonHangBan, HangHoaRow parentHangHoaRowByFK_ChiTietDonHangBan_HangHoa, string GiaMua, string GiaBan, string SoLuong, string ThanhTien) {
                 ChiTietDonHangBanRow rowChiTietDonHangBanRow = ((ChiTietDonHangBanRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaChiTiet,
-                        MaDH,
-                        MaHang,
+                        null,
+                        null,
                         GiaMua,
                         GiaBan,
                         SoLuong,
                         ThanhTien};
+                if ((parentDonHangBanRowByFK_ChiTietDonHangBan_DonHangBan != null)) {
+                    columnValuesArray[1] = parentDonHangBanRowByFK_ChiTietDonHangBan_DonHangBan[0];
+                }
+                if ((parentHangHoaRowByFK_ChiTietDonHangBan_HangHoa != null)) {
+                    columnValuesArray[2] = parentHangHoaRowByFK_ChiTietDonHangBan_HangHoa[0];
+                }
                 rowChiTietDonHangBanRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowChiTietDonHangBanRow);
                 return rowChiTietDonHangBanRow;
@@ -638,7 +658,7 @@ namespace QUANLYBANHANG {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                LTCSDataSet1 ds = new LTCSDataSet1();
+                LTCSDataSet ds = new LTCSDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -960,7 +980,7 @@ namespace QUANLYBANHANG {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                LTCSDataSet1 ds = new LTCSDataSet1();
+                LTCSDataSet ds = new LTCSDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1330,7 +1350,7 @@ namespace QUANLYBANHANG {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                LTCSDataSet1 ds = new LTCSDataSet1();
+                LTCSDataSet ds = new LTCSDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1479,6 +1499,28 @@ namespace QUANLYBANHANG {
                     this[this.tableChiTietDonHangBan.ThanhTienColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DonHangBanRow DonHangBanRow {
+                get {
+                    return ((DonHangBanRow)(this.GetParentRow(this.Table.ParentRelations["FK_ChiTietDonHangBan_DonHangBan"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ChiTietDonHangBan_DonHangBan"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public HangHoaRow HangHoaRow {
+                get {
+                    return ((HangHoaRow)(this.GetParentRow(this.Table.ParentRelations["FK_ChiTietDonHangBan_HangHoa"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ChiTietDonHangBan_HangHoa"]);
+                }
+            }
         }
         
         /// <summary>
@@ -1547,6 +1589,17 @@ namespace QUANLYBANHANG {
                 }
                 set {
                     this[this.tableDonHangBan.TongGiaTriColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ChiTietDonHangBanRow[] GetChiTietDonHangBanRows() {
+                if ((this.Table.ChildRelations["FK_ChiTietDonHangBan_DonHangBan"] == null)) {
+                    return new ChiTietDonHangBanRow[0];
+                }
+                else {
+                    return ((ChiTietDonHangBanRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ChiTietDonHangBan_DonHangBan"])));
                 }
             }
         }
@@ -1650,6 +1703,17 @@ namespace QUANLYBANHANG {
                 }
                 set {
                     this[this.tableHangHoa.GhiChuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ChiTietDonHangBanRow[] GetChiTietDonHangBanRows() {
+                if ((this.Table.ChildRelations["FK_ChiTietDonHangBan_HangHoa"] == null)) {
+                    return new ChiTietDonHangBanRow[0];
+                }
+                else {
+                    return ((ChiTietDonHangBanRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ChiTietDonHangBan_HangHoa"])));
                 }
             }
         }
@@ -1757,7 +1821,7 @@ namespace QUANLYBANHANG {
         }
     }
 }
-namespace QUANLYBANHANG.LTCSDataSet1TableAdapters {
+namespace QUANLYBANHANG.LTCSDataSetTableAdapters {
     
     
     /// <summary>
@@ -1955,7 +2019,7 @@ SELECT MaChiTiet, MaDH, MaHang, GiaMua, GiaBan, SoLuong, ThanhTien FROM ChiTietD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LTCSDataSet1.ChiTietDonHangBanDataTable dataTable) {
+        public virtual int Fill(LTCSDataSet.ChiTietDonHangBanDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1968,9 +2032,9 @@ SELECT MaChiTiet, MaDH, MaHang, GiaMua, GiaBan, SoLuong, ThanhTien FROM ChiTietD
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LTCSDataSet1.ChiTietDonHangBanDataTable GetData() {
+        public virtual LTCSDataSet.ChiTietDonHangBanDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            LTCSDataSet1.ChiTietDonHangBanDataTable dataTable = new LTCSDataSet1.ChiTietDonHangBanDataTable();
+            LTCSDataSet.ChiTietDonHangBanDataTable dataTable = new LTCSDataSet.ChiTietDonHangBanDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1978,14 +2042,14 @@ SELECT MaChiTiet, MaDH, MaHang, GiaMua, GiaBan, SoLuong, ThanhTien FROM ChiTietD
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LTCSDataSet1.ChiTietDonHangBanDataTable dataTable) {
+        public virtual int Update(LTCSDataSet.ChiTietDonHangBanDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LTCSDataSet1 dataSet) {
+        public virtual int Update(LTCSDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ChiTietDonHangBan");
         }
         
@@ -2431,7 +2495,7 @@ SELECT MaDH, NgayDH, MaNV, MaKH, TongGiaTri FROM DonHangBan WHERE (MaDH = @MaDH)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LTCSDataSet1.DonHangBanDataTable dataTable) {
+        public virtual int Fill(LTCSDataSet.DonHangBanDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2444,9 +2508,9 @@ SELECT MaDH, NgayDH, MaNV, MaKH, TongGiaTri FROM DonHangBan WHERE (MaDH = @MaDH)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LTCSDataSet1.DonHangBanDataTable GetData() {
+        public virtual LTCSDataSet.DonHangBanDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            LTCSDataSet1.DonHangBanDataTable dataTable = new LTCSDataSet1.DonHangBanDataTable();
+            LTCSDataSet.DonHangBanDataTable dataTable = new LTCSDataSet.DonHangBanDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2454,14 +2518,14 @@ SELECT MaDH, NgayDH, MaNV, MaKH, TongGiaTri FROM DonHangBan WHERE (MaDH = @MaDH)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LTCSDataSet1.DonHangBanDataTable dataTable) {
+        public virtual int Update(LTCSDataSet.DonHangBanDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LTCSDataSet1 dataSet) {
+        public virtual int Update(LTCSDataSet dataSet) {
             return this.Adapter.Update(dataSet, "DonHangBan");
         }
         
@@ -2852,7 +2916,7 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LTCSDataSet1.HangHoaDataTable dataTable) {
+        public virtual int Fill(LTCSDataSet.HangHoaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2865,9 +2929,9 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LTCSDataSet1.HangHoaDataTable GetData() {
+        public virtual LTCSDataSet.HangHoaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            LTCSDataSet1.HangHoaDataTable dataTable = new LTCSDataSet1.HangHoaDataTable();
+            LTCSDataSet.HangHoaDataTable dataTable = new LTCSDataSet.HangHoaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2875,14 +2939,14 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LTCSDataSet1.HangHoaDataTable dataTable) {
+        public virtual int Update(LTCSDataSet.HangHoaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LTCSDataSet1 dataSet) {
+        public virtual int Update(LTCSDataSet dataSet) {
             return this.Adapter.Update(dataSet, "HangHoa");
         }
         
@@ -3298,17 +3362,8 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(LTCSDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(LTCSDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._chiTietDonHangBanTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ChiTietDonHangBan.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._chiTietDonHangBanTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._donHangBanTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.DonHangBan.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -3327,6 +3382,15 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._chiTietDonHangBanTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ChiTietDonHangBan.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._chiTietDonHangBanTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -3335,16 +3399,8 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(LTCSDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(LTCSDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._chiTietDonHangBanTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ChiTietDonHangBan.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._chiTietDonHangBanTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._donHangBanTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.DonHangBan.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -3361,6 +3417,14 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._chiTietDonHangBanTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ChiTietDonHangBan.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._chiTietDonHangBanTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -3369,8 +3433,16 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(LTCSDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(LTCSDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._chiTietDonHangBanTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ChiTietDonHangBan.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._chiTietDonHangBanTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._hangHoaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.HangHoa.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -3384,14 +3456,6 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._donHangBanTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._chiTietDonHangBanTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ChiTietDonHangBan.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._chiTietDonHangBanTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -3427,7 +3491,7 @@ SELECT MaHang, TenHang, MaNXB, GiaMua, GiaBan, SoLuongTon, NgayCapNhat, GhiChu F
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(LTCSDataSet1 dataSet) {
+        public virtual int UpdateAll(LTCSDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
