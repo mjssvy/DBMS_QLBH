@@ -17,10 +17,25 @@ namespace QUANLYBANHANG
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            InitializeData();
             LoadData();
         }
-      
+
+        private void InitializeData()
+        {
+            try
+            {
+                // Gắn sự kiện cho bảng HangHoa
+                lAB3DataSet.HangHoa.RowChanged += HangHoaTable_RowChanged;
+
+                // Gắn sự kiện cho bảng ChiTietDonHangBan
+                lAB3DataSet.ChiTietDonHangBan.RowChanged += ChiTietDonHangTable_RowChanged;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error initializing data: " + ex.Message);
+            }
+        }
 
         private void LoadData()
         {
@@ -70,6 +85,65 @@ namespace QUANLYBANHANG
                 MessageBox.Show("Error binding data: " + ex.Message);
             }
         }
+        private bool updatingData = false;
+
+        private void HangHoaTable_RowChanged(object sender, DataRowChangeEventArgs e)
+        {
+            try
+            {
+                if (updatingData)
+                    return;
+
+                string maHang = e.Row["MaHang"].ToString();
+
+                foreach (DataRow row in lAB3DataSet.ChiTietDonHangBan.Rows)
+                {
+                    if (row.RowState != DataRowState.Deleted && row["MaHang"].ToString() == maHang)
+                    {
+                        updatingData = true; // Đặt biến đánh dấu
+
+                        row["GiaMua"] = e.Row["GiaMua"];
+                        row["GiaBan"] = e.Row["GiaBan"];
+                        // Cập nhật các cột khác tùy theo cấu trúc của bảng ChiTietDonHangBan
+
+                        updatingData = false; // Đặt lại biến đánh dấu
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating ChiTietDonHangBan: " + ex.Message);
+            }
+        }
+        private void ChiTietDonHangTable_RowChanged(object sender, DataRowChangeEventArgs e)
+        {
+            try
+            {
+                if (updatingData)
+                    return;
+
+                string maHang = e.Row["MaHang"].ToString();
+
+                foreach (DataRow row in lAB3DataSet.HangHoa.Rows)
+                {
+                    if (row.RowState != DataRowState.Deleted && row["MaHang"].ToString() == maHang)
+                    {
+                        updatingData = true; // Đặt biến đánh dấu
+
+                        row["GiaMua"] = e.Row["GiaMua"];
+                        row["GiaBan"] = e.Row["GiaBan"];
+                        // Cập nhật các cột khác tùy theo cấu trúc của bảng HangHoa
+
+                        updatingData = false; // Đặt lại biến đánh dấu
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating HangHoa: " + ex.Message);
+            }
+        }
+
 
 
         private void btn_ThemSach_Click(object sender, EventArgs e)
