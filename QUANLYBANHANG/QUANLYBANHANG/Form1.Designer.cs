@@ -126,6 +126,13 @@
             this.donHangBanTableAdapter1 = new QUANLYBANHANG.LAB3DataSetTableAdapters.DonHangBanTableAdapter();
             this.chiTietDonHangBanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.chiTietDonHangBanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.lTCSDataSet = new QUANLYBANHANG.LTCSDataSet();
+            this.hangHoaBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.hangHoaTableAdapter2 = new QUANLYBANHANG.LTCSDataSetTableAdapters.HangHoaTableAdapter();
+            this.chiTietDonHangBanBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.chiTietDonHangBanTableAdapter1 = new QUANLYBANHANG.LTCSDataSetTableAdapters.ChiTietDonHangBanTableAdapter();
+            this.donHangBanBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.donHangBanTableAdapter2 = new QUANLYBANHANG.LTCSDataSetTableAdapters.DonHangBanTableAdapter();
             this.panel_Item.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource3)).BeginInit();
@@ -147,6 +154,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lTCSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donHangBanBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -392,7 +403,7 @@
             this.soLuongTonDataGridViewTextBoxColumn,
             this.ngayCapNhatDataGridViewTextBoxColumn,
             this.ghiChuDataGridViewTextBoxColumn});
-            this.dgv_Sach.DataSource = this.hangHoaBindingSource3;
+            this.dgv_Sach.DataSource = this.hangHoaBindingSource4;
             this.dgv_Sach.Location = new System.Drawing.Point(22, 445);
             this.dgv_Sach.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Sach.MultiSelect = false;
@@ -401,6 +412,7 @@
             this.dgv_Sach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Sach.Size = new System.Drawing.Size(838, 343);
             this.dgv_Sach.TabIndex = 0;
+            this.dgv_Sach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Sach_CellContentClick);
             // 
             // maHangDataGridViewTextBoxColumn
             // 
@@ -597,7 +609,7 @@
             this.giaBanDataGridViewTextBoxColumn1,
             this.soLuongDataGridViewTextBoxColumn,
             this.thanhTienDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.chiTietDonHangBanBindingSource5;
+            this.dataGridView1.DataSource = this.chiTietDonHangBanBindingSource6;
             this.dataGridView1.Location = new System.Drawing.Point(16, 445);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -607,6 +619,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(509, 343);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            //this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // maChiTietDataGridViewTextBoxColumn
             // 
@@ -878,7 +891,7 @@
             this.maNVDataGridViewTextBoxColumn,
             this.maKHDataGridViewTextBoxColumn,
             this.tongGiaTriDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.donHangBanBindingSource1;
+            this.dataGridView2.DataSource = this.donHangBanBindingSource2;
             this.dataGridView2.Location = new System.Drawing.Point(773, 15);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
@@ -995,6 +1008,38 @@
             this.chiTietDonHangBanBindingSource2.DataMember = "ChiTietDonHangBan";
             this.chiTietDonHangBanBindingSource2.DataSource = this.lAB3DataSet;
             // 
+            // lTCSDataSet
+            // 
+            this.lTCSDataSet.DataSetName = "LTCSDataSet";
+            this.lTCSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hangHoaBindingSource4
+            // 
+            this.hangHoaBindingSource4.DataMember = "HangHoa";
+            this.hangHoaBindingSource4.DataSource = this.lTCSDataSet;
+            // 
+            // hangHoaTableAdapter2
+            // 
+            this.hangHoaTableAdapter2.ClearBeforeFill = true;
+            // 
+            // chiTietDonHangBanBindingSource6
+            // 
+            this.chiTietDonHangBanBindingSource6.DataMember = "ChiTietDonHangBan";
+            this.chiTietDonHangBanBindingSource6.DataSource = this.lTCSDataSet;
+            // 
+            // chiTietDonHangBanTableAdapter1
+            // 
+            this.chiTietDonHangBanTableAdapter1.ClearBeforeFill = true;
+            // 
+            // donHangBanBindingSource2
+            // 
+            this.donHangBanBindingSource2.DataMember = "DonHangBan";
+            this.donHangBanBindingSource2.DataSource = this.lTCSDataSet;
+            // 
+            // donHangBanTableAdapter2
+            // 
+            this.donHangBanTableAdapter2.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1035,6 +1080,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lTCSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hangHoaBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chiTietDonHangBanBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donHangBanBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1138,6 +1187,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongTonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngayCapNhatDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ghiChuDataGridViewTextBoxColumn;
+        private LTCSDataSet lTCSDataSet;
+        private System.Windows.Forms.BindingSource hangHoaBindingSource4;
+        private LTCSDataSetTableAdapters.HangHoaTableAdapter hangHoaTableAdapter2;
+        private System.Windows.Forms.BindingSource chiTietDonHangBanBindingSource6;
+        private LTCSDataSetTableAdapters.ChiTietDonHangBanTableAdapter chiTietDonHangBanTableAdapter1;
+        private System.Windows.Forms.BindingSource donHangBanBindingSource2;
+        private LTCSDataSetTableAdapters.DonHangBanTableAdapter donHangBanTableAdapter2;
     }
 }
 
