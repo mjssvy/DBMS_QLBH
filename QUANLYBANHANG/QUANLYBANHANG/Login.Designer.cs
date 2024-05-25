@@ -38,8 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tácGiảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.côngCụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tCUQuizToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
@@ -147,21 +145,6 @@
             this.tácGiảToolStripMenuItem.Text = "Tác giả";
             this.tácGiảToolStripMenuItem.Click += new System.EventHandler(this.tácGiảToolStripMenuItem_Click);
             // 
-            // trợGiúpToolStripMenuItem
-            // 
-            this.trợGiúpToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(87, 27);
-            this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
-            this.trợGiúpToolStripMenuItem.Click += new System.EventHandler(this.trợGiúpToolStripMenuItem_Click);
-            // 
-            // côngCụToolStripMenuItem
-            // 
-            this.côngCụToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.côngCụToolStripMenuItem.Name = "côngCụToolStripMenuItem";
-            this.côngCụToolStripMenuItem.Size = new System.Drawing.Size(88, 27);
-            this.côngCụToolStripMenuItem.Text = "Công cụ";
-            // 
             // tCUQuizToolStripMenuItem
             // 
             this.tCUQuizToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -174,8 +157,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tCUQuizToolStripMenuItem,
-            this.côngCụToolStripMenuItem,
-            this.trợGiúpToolStripMenuItem,
             this.tácGiảToolStripMenuItem,
             this.thoátToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -215,8 +196,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tácGiảToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem côngCụToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tCUQuizToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
     }

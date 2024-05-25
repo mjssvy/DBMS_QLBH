@@ -16,5 +16,10 @@ namespace QUANLYBANHANG
         {
             InitializeComponent();
         }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

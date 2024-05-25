@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\quanlybanhang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|solutionrelative:quanlybanhang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|e:\\dbms\\dbms\\dbms_qlbh\\quanlybanhang\\quanlybanhang\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|solutionrelative:quanlybanhang\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|e:\\dbms\\dbms\\dbms_qlbh\\quanlybanhang\\quanlybanhang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\quanlybanhang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|solutionrelative:quanlybanhang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|e:\\dbms\\dbms\\dbms_qlbh\\quanlybanhang\\quanlybanhang\\qthcsdldataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|solutionrelative:quanlybanhang\\qthcsdldataset.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|e:\\dbms\\dbms\\dbms_qlbh\\quanlybanhang\\quanlybanhang\\tg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|solutionrelative:quanlybanhang\\tg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|e:\\dbms\\dbms\\dbms_qlbh\\quanlybanhang\\quanlybanhang\\tg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|solutionrelative:quanlybanhang\\tg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|e:\\dbms\\dbms\\dbms_qlbh\\quanlybanhang\\quanlybanhang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EC29B8-EE80-4DE2-83FD-B5D3D934A4FC}|QUANLYBANHANG\\QUANLYBANHANG.csproj|solutionrelative:quanlybanhang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/msi/LAB3/True/SqlTable/dbo.HangHoa.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
@@ -28,7 +44,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 144,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -68,7 +84,56 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QTHCSDLDataSet.xsd",
+              "DocumentMoniker": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\QTHCSDLDataSet.xsd",
+              "RelativeDocumentMoniker": "QUANLYBANHANG\\QTHCSDLDataSet.xsd",
+              "ToolTip": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\QTHCSDLDataSet.xsd",
+              "RelativeToolTip": "QUANLYBANHANG\\QTHCSDLDataSet.xsd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2024-05-25T10:52:09.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "TG.cs",
+              "DocumentMoniker": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\TG.cs",
+              "RelativeDocumentMoniker": "QUANLYBANHANG\\TG.cs",
+              "ToolTip": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\TG.cs",
+              "RelativeToolTip": "QUANLYBANHANG\\TG.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T10:51:50.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TG.cs [Design]",
+              "DocumentMoniker": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\TG.cs",
+              "RelativeDocumentMoniker": "QUANLYBANHANG\\TG.cs",
+              "ToolTip": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\TG.cs [Design]",
+              "RelativeToolTip": "QUANLYBANHANG\\TG.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T10:51:36.299Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\Login.cs",
+              "RelativeDocumentMoniker": "QUANLYBANHANG\\Login.cs",
+              "ToolTip": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\Login.cs [Design]",
+              "RelativeToolTip": "QUANLYBANHANG\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T10:51:11.543Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\thuyv\\Documents\\Zalo Received Files\\Form1.cs",
               "ToolTip": "C:\\Users\\thuyv\\Documents\\Zalo Received Files\\Form1.cs",
@@ -78,13 +143,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Form1.cs",
               "DocumentMoniker": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\Form1.cs",
               "RelativeDocumentMoniker": "QUANLYBANHANG\\Form1.cs",
               "ToolTip": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\Form1.cs",
               "RelativeToolTip": "QUANLYBANHANG\\Form1.cs",
-              "ViewState": "AQIAAIgBAAAAAAAAAAAUwJYBAABbAAAA",
+              "ViewState": "AQIAAIgBAAAAAAAAAAAUwJYBAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-12T06:12:29.58Z",
               "EditorCaption": ""
@@ -103,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "dbo.HangHoa [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/msi/LAB3/True/SqlTable/dbo.HangHoa.sql",
               "ToolTip": "dbo.HangHoa [Data]",
@@ -112,7 +177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "App.config",
               "DocumentMoniker": "E:\\DBMS\\DBMS\\DBMS_QLBH\\QUANLYBANHANG\\QUANLYBANHANG\\App.config",
               "RelativeDocumentMoniker": "QUANLYBANHANG\\App.config",
