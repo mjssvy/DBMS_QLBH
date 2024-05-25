@@ -8,7 +8,7 @@ namespace QUANLYBANHANG
 {
     public partial class Form1 : Form
     {
-        private SqlConnection con = new SqlConnection("Data Source=TRAMY_PC;Initial Catalog=LTCS;Integrated Security=True");
+        private SqlConnection con = new SqlConnection("Data Source=KA\\SQLEXPRESS;Initial Catalog=QTHCSDL;Integrated Security=True;");
 
         public Form1()
         {
@@ -19,19 +19,27 @@ namespace QUANLYBANHANG
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qTHCSDLDataSet1.DonHangBan' table. You can move, or remove it, as needed.
+            this.donHangBanTableAdapter3.Fill(this.qTHCSDLDataSet1.DonHangBan);
+            // TODO: This line of code loads data into the 'qTHCSDLDataSet1.ChiTietDonHang' table. You can move, or remove it, as needed.
+            this.chiTietDonHangTableAdapter1.Fill(this.qTHCSDLDataSet1.ChiTietDonHang);
+            // TODO: This line of code loads data into the 'qTHCSDLDataSet1.HangHoa' table. You can move, or remove it, as needed.
+            this.hangHoaTableAdapter3.Fill(this.qTHCSDLDataSet1.HangHoa);
+            // TODO: This line of code loads data into the 'qTHCSDLDataSet1.KhachHang' table. You can move, or remove it, as needed.
+            this.khachHangTableAdapter.Fill(this.qTHCSDLDataSet1.KhachHang);
 
             LoadData();
         }
         private void dgv_Sach_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && (e.ColumnIndex == dgv_Sach.Columns["giaBanDataGridViewTextBoxColumn"].Index ||
-                                    e.ColumnIndex == dgv_Sach.Columns["giaMuaDataGridViewTextBoxColumn"].Index))
+            if (e.RowIndex >= 0 && (e.ColumnIndex == dgv_Sach.Columns["GiaBan"].Index ||
+                                    e.ColumnIndex == dgv_Sach.Columns["GiaMua"].Index))
             {
                 try
                 {
-                    string maHang = dgv_Sach.Rows[e.RowIndex].Cells["maHangDataGridViewTextBoxColumn"].Value.ToString();
-                    decimal giaBan = Convert.ToDecimal(dgv_Sach.Rows[e.RowIndex].Cells["giaBanDataGridViewTextBoxColumn"].Value);
-                    decimal giaMua = Convert.ToDecimal(dgv_Sach.Rows[e.RowIndex].Cells["giaMuaDataGridViewTextBoxColumn"].Value);
+                    string maHang = dgv_Sach.Rows[e.RowIndex].Cells["MaHang"].Value.ToString();
+                    decimal giaBan = Convert.ToDecimal(dgv_Sach.Rows[e.RowIndex].Cells["GiaBan"].Value);
+                    decimal giaMua = Convert.ToDecimal(dgv_Sach.Rows[e.RowIndex].Cells["GiaMua"].Value);
 
                     con.Open();
 
@@ -45,7 +53,7 @@ namespace QUANLYBANHANG
                     cmdHangHoa.ExecuteNonQuery();
 
                     // Update ChiTietDonHangBan table
-                    string queryChiTiet = "UPDATE [ChiTietDonHangBan] SET GiaBan = @GiaBan, GiaMua = @GiaMua WHERE MaHang = @MaHang";
+                    string queryChiTiet = "UPDATE [ChiTietDonHang] SET GiaBan = @GiaBan, GiaMua = @GiaMua WHERE MaHang = @MaHang";
                     SqlCommand cmdChiTiet = new SqlCommand(queryChiTiet, con);
                     cmdChiTiet.Parameters.AddWithValue("@GiaBan", giaBan);
                     cmdChiTiet.Parameters.AddWithValue("@GiaMua", giaMua);
@@ -68,13 +76,13 @@ namespace QUANLYBANHANG
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && (e.ColumnIndex == dataGridView1.Columns["giaBanDataGridViewTextBoxColumn1"].Index ||
+            if (e.RowIndex >= 0 && (e.ColumnIndex == dataGridView1.Columns["GiaBang"].Index ||
                                     e.ColumnIndex == dataGridView1.Columns["giaMuaDataGridViewTextBoxColumn1"].Index))
             {
                 try
                 {
                     string maHang = dataGridView1.Rows[e.RowIndex].Cells["maHangDataGridViewTextBoxColumn1"].Value.ToString();
-                    decimal giaBan = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells["giaBanDataGridViewTextBoxColumn1"].Value);
+                    decimal giaBan = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells["GiaBang"].Value);
                     decimal giaMua = Convert.ToDecimal(dataGridView1.Rows[e.RowIndex].Cells["giaMuaDataGridViewTextBoxColumn1"].Value);
 
                     con.Open();
@@ -89,7 +97,7 @@ namespace QUANLYBANHANG
                     cmdHangHoa.ExecuteNonQuery();
 
                     // Update ChiTietDonHangBan table
-                    string queryChiTiet = "UPDATE [ChiTietDonHangBan] SET GiaBan = @GiaBan, GiaMua = @GiaMua WHERE MaHang = @MaHang";
+                    string queryChiTiet = "UPDATE [ChiTietDonHang] SET GiaBan = @GiaBan, GiaMua = @GiaMua WHERE MaHang = @MaHang";
                     SqlCommand cmdChiTiet = new SqlCommand(queryChiTiet, con);
                     cmdChiTiet.Parameters.AddWithValue("@GiaBan", giaBan);
                     cmdChiTiet.Parameters.AddWithValue("@GiaMua", giaMua);
@@ -115,13 +123,14 @@ namespace QUANLYBANHANG
             try
             {
                 // TODO: This line of code loads data into the 'lTCSDataSet.DonHangBan' table. You can move, or remove it, as needed.
-                this.donHangBanTableAdapter2.Fill(this.lTCSDataSet.DonHangBan);
+                //this.donHangBanTableAdapter2.Fill(this.lTCSDataSet.DonHangBan);
                 // TODO: This line of code loads data into the 'lTCSDataSet.ChiTietDonHangBan' table. You can move, or remove it, as needed.
-                this.chiTietDonHangBanTableAdapter1.Fill(this.lTCSDataSet.ChiTietDonHangBan);
+                //this.chiTietDonHangBanTableAdapter1.Fill(this.lTCSDataSet.ChiTietDonHangBan);
                 // TODO: This line of code loads data into the 'lTCSDataSet.HangHoa' table. You can move, or remove it, as needed.
-                this.hangHoaTableAdapter2.Fill(this.lTCSDataSet.HangHoa);
+                //this.hangHoaTableAdapter2.Fill(this.lTCSDataSet.HangHoa);
                 BindData();
                 BindData1();
+                BindData3();
 
             }
             catch (Exception ex)
@@ -129,7 +138,17 @@ namespace QUANLYBANHANG
                 MessageBox.Show("Error loading data: " + ex.Message);
             }
         }
-
+        private void BindData3()
+        {
+            try {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [DonHangBan]", con);
+                SqlDataAdapter sd = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sd.Fill(dt);
+                dataGridView2.DataSource = dt;
+            }
+            catch (Exception ex) { }
+        }
 
         private void BindData()
         {
@@ -150,7 +169,7 @@ namespace QUANLYBANHANG
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [ChiTietDonHangBan]", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [ChiTietDonHang]", con);
                 SqlDataAdapter sd = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sd.Fill(dt);
@@ -166,6 +185,7 @@ namespace QUANLYBANHANG
         private void btn_ThemSach_Click(object sender, EventArgs e)
         {
             AddNewBook();
+            Clear();
         }
 
         private void AddNewBook()
@@ -202,6 +222,7 @@ namespace QUANLYBANHANG
         private void btn_SuaSach_Click(object sender, EventArgs e)
         {
             UpdateBook();
+            Clear();
         }
         private void UpdateBook()
         {
@@ -274,6 +295,7 @@ namespace QUANLYBANHANG
                     MessageBox.Show("Delete successfully");
                     con.Close();
                     LoadData();
+                    Clear();
                 }
                 else
                 {
@@ -289,20 +311,21 @@ namespace QUANLYBANHANG
         private void button3_Click(object sender, EventArgs e)
         {
             AddBill();
+            Clear();
         }
         private void AddBill()
         {
             try
             {
                 con.Open();
-                string query = "INSERT INTO [ChiTietDonHangBan] (MaChiTiet, MaDH, MaHang, GiaMua, GiaBan, SoLuong, ThanhTien) " +
-                               "VALUES (@MaChiTiet, @MaDH, @MaHang,  @GiaMua, @GiaBan, @SoLuong,  @ThanhTien)";
+                string query = "INSERT INTO [ChiTietDonHang] (MaChiTiet, MaDH, MaHang, GiaMua, GiaBang, SoLuong, ThanhTien) " +
+                               "VALUES (@MaChiTiet, @MaDH, @MaHang,  @GiaMua, @GiaBang, @SoLuong,  @ThanhTien)";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@MaChiTiet", txb_bdid.Text);
                 cmd.Parameters.AddWithValue("@MaDH", textBox7.Text);
                 cmd.Parameters.AddWithValue("@MaHang", textBox8.Text);
                 cmd.Parameters.AddWithValue("@GiaMua", txb_muab.Text);
-                cmd.Parameters.AddWithValue("@GiaBan", txb_banb.Text);
+                cmd.Parameters.AddWithValue("@GiaBang", txb_banb.Text);
                 cmd.Parameters.AddWithValue("@SoLuong", txb_num.Text);
                 cmd.Parameters.AddWithValue("@ThanhTien", textBox2.Text);
 
@@ -327,7 +350,7 @@ namespace QUANLYBANHANG
             textBox7.Text = dataGridView1.Rows[e.RowIndex].Cells["maDHDataGridViewTextBoxColumn"].Value.ToString();
             textBox8.Text = dataGridView1.Rows[e.RowIndex].Cells["maHangDataGridViewTextBoxColumn1"].Value.ToString();
             txb_muab.Text = dataGridView1.Rows[e.RowIndex].Cells["giaMuaDataGridViewTextBoxColumn1"].Value.ToString();
-            txb_banb.Text = dataGridView1.Rows[e.RowIndex].Cells["giaBanDataGridViewTextBoxColumn1"].Value.ToString();
+            txb_banb.Text = dataGridView1.Rows[e.RowIndex].Cells["GiaBang"].Value.ToString();
             txb_num.Text = dataGridView1.Rows[e.RowIndex].Cells["soLuongDataGridViewTextBoxColumn"].Value.ToString();
             textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells["thanhTienDataGridViewTextBoxColumn"].Value.ToString();
 
@@ -337,14 +360,14 @@ namespace QUANLYBANHANG
             try
             {
                 con.Open();
-                string query = "UPDATE [ChiTietDonHangBan] SET MaChiTiet = @MaChiTiet, MaDH = @MaDH, MaHang = @MaHang, GiaMua = @GiaMua, " +
-                               "GiaBan = @GiaBan, SoLuong = @SoLuong, ThanhTien = @ThanhTien WHERE MaChiTiet = @MaChiTiet";
+                string query = "UPDATE [ChiTietDonHang] SET MaChiTiet = @MaChiTiet, MaDH = @MaDH, MaHang = @MaHang, GiaMua = @GiaMua, " +
+                               "GiaBang = @GiaBang, SoLuong = @SoLuong, ThanhTien = @ThanhTien WHERE MaChiTiet = @MaChiTiet";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@MaChiTiet", txb_bdid.Text);
                 cmd.Parameters.AddWithValue("@MaDH", textBox7.Text);
                 cmd.Parameters.AddWithValue("@MaHang", textBox8.Text);
                 cmd.Parameters.AddWithValue("@GiaMua", txb_muab.Text);
-                cmd.Parameters.AddWithValue("@GiaBan", txb_banb.Text);
+                cmd.Parameters.AddWithValue("@GiaBang", txb_banb.Text);
                 cmd.Parameters.AddWithValue("@SoLuong", txb_num.Text);
                 cmd.Parameters.AddWithValue("@ThanhTien", textBox2.Text);
 
@@ -362,10 +385,30 @@ namespace QUANLYBANHANG
             }
 
         }
-
+        private void Clear()
+        {
+            txb_MaSach.Text = "";
+            txb_TenSach.Text = "";
+            txb_nxb.Text = "";
+            txb_mua.Text = "";
+            txb_ban.Text = "";
+            txb_sl.Text = "";
+            rtb_MoTa.Text = "";
+            txb_bdid.Text="";
+            textBox7.Text = "";
+            textBox8.Text = "";
+            txb_muab.Text = "";
+            txb_banb.Text = "";
+            txb_num.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             UpdateBill();
+            Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -374,17 +417,18 @@ namespace QUANLYBANHANG
             if (!string.IsNullOrEmpty(txb_bdid.Text))
             { // Kiểm tra xem ID có tồn tại trong cơ sở dữ liệu không
                 con.Open();
-                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM [ChiTietDonHangBan] WHERE MaChiTiet = '" + txb_bdid.Text + "'", con);
+                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM [ChiTietDonHang] WHERE MaChiTiet = '" + txb_bdid.Text + "'", con);
                 int count = (int)checkCmd.ExecuteScalar();
                 con.Close();
                 if (count > 0)
                 {// ID tồn tại, thực hiện xóa
                     con.Open();
-                    SqlCommand deleteCmd = new SqlCommand("DELETE FROM [ChiTietDonHangBan] WHERE MaChiTiet='" + txb_bdid.Text + "'", con);
+                    SqlCommand deleteCmd = new SqlCommand("DELETE FROM [ChiTietDonHang] WHERE MaChiTiet='" + txb_bdid.Text + "'", con);
                     deleteCmd.ExecuteNonQuery();
                     MessageBox.Show("Delete successfully");
                     con.Close();
                     LoadData();
+                    Clear();
                 }
                 else
                 {
@@ -399,26 +443,82 @@ namespace QUANLYBANHANG
 
         private void dgv_Sach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void dgv_Hanghoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             dgv_Sach.CurrentRow.Selected = true;
-            txb_MaSach.Text = dgv_Sach.Rows[e.RowIndex].Cells["maHangDataGridViewTextBoxColumn"].Value.ToString();
-            txb_TenSach.Text = dgv_Sach.Rows[e.RowIndex].Cells["tenHangDataGridViewTextBoxColumn"].Value.ToString();
-            txb_nxb.Text = dgv_Sach.Rows[e.RowIndex].Cells["maNXBDataGridViewTextBoxColumn"].Value.ToString();
-            txb_mua.Text = dgv_Sach.Rows[e.RowIndex].Cells["giaMuaDataGridViewTextBoxColumn"].Value.ToString();
-            txb_ban.Text = dgv_Sach.Rows[e.RowIndex].Cells["giaBanDataGridViewTextBoxColumn"].Value.ToString();
-            txb_sl.Text = dgv_Sach.Rows[e.RowIndex].Cells["soLuongTonDataGridViewTextBoxColumn"].Value.ToString();
-            if (dgv_Sach.Rows[e.RowIndex].Cells["ngayCapNhatDataGridViewTextBoxColumn"].Value != null)
+            txb_MaSach.Text = dgv_Sach.Rows[e.RowIndex].Cells["MaHang"].Value.ToString();
+            txb_TenSach.Text = dgv_Sach.Rows[e.RowIndex].Cells["TenHang"].Value.ToString();
+            txb_nxb.Text = dgv_Sach.Rows[e.RowIndex].Cells["MaNXB"].Value.ToString();
+            txb_mua.Text = dgv_Sach.Rows[e.RowIndex].Cells["GiaMua"].Value.ToString();
+            txb_ban.Text = dgv_Sach.Rows[e.RowIndex].Cells["GiaBan"].Value.ToString();
+            txb_sl.Text = dgv_Sach.Rows[e.RowIndex].Cells["SoLuongTon"].Value.ToString();
+            if (dgv_Sach.Rows[e.RowIndex].Cells["NgayCapNhat"].Value != null)
             {
-                dateTimePicker1.Value = Convert.ToDateTime(dgv_Sach.Rows[e.RowIndex].Cells["ngayCapNhatDataGridViewTextBoxColumn"].Value);
+                dateTimePicker1.Value = Convert.ToDateTime(dgv_Sach.Rows[e.RowIndex].Cells["NgayCapNhat"].Value);
             }
             else
             {
                 dateTimePicker1.Value = DateTime.Now;
             }
 
-            rtb_MoTa.Text = dgv_Sach.Rows[e.RowIndex].Cells["ghiChuDataGridViewTextBoxColumn"].Value.ToString();
+            rtb_MoTa.Text = dgv_Sach.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
         }
 
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView2.CurrentRow.Selected = true;
+            textBox3.Text = dataGridView2.Rows[e.RowIndex].Cells["maDHDataGridViewTextBoxColumn1"].Value.ToString();
+            textBox4.Text = dataGridView2.Rows[e.RowIndex].Cells["maNVDataGridViewTextBoxColumn"].Value.ToString();
+            textBox5.Text = dataGridView2.Rows[e.RowIndex].Cells["maKHDataGridViewTextBoxColumn"].Value.ToString();
+            textBox6.Text = dataGridView2.Rows[e.RowIndex].Cells["tongGiaTriDataGridViewTextBoxColumn"].Value.ToString();
+            if (dataGridView2.Rows[e.RowIndex].Cells["ngayDHDataGridViewTextBoxColumn"].Value != null)
+            {
+                dateTimePicker2.Value = Convert.ToDateTime(dataGridView2.Rows[e.RowIndex].Cells["ngayDHDataGridViewTextBoxColumn"].Value);
+            }
+            else
+            {
+                dateTimePicker2.Value = DateTime.Now;
+            }
+            LoadBillDetail(textBox3.Text);
 
+        }
+        private void LoadBillDetail(string maDH)
+        {
+            // Chuỗi kết nối tới cơ sở dữ liệu
+            string connectionString = "Data Source=KA\\SQLEXPRESS;Initial Catalog=QTHCSDL;Integrated Security=True;";
 
+            // Truy vấn lấy dữ liệu từ bảng BillDetail dựa trên maDH
+            string query = "SELECT * FROM ChiTietDonHang WHERE maDH = @maDH";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@maDH", maDH);
+
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        txb_bdid.Text = reader["maChiTiet"].ToString();
+                        textBox7.Text = reader["maDH"].ToString();
+                        textBox8.Text = reader["maHang"].ToString();
+                        txb_muab.Text = reader["giaMua"].ToString();
+                        txb_banb.Text = reader["GiaBang"].ToString();
+                        txb_num.Text = reader["soLuong"].ToString();
+                        textBox2.Text = reader["thanhTien"].ToString();
+                    }
+                }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

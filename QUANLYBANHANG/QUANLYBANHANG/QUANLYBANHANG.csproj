@@ -163,6 +163,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LAB3DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="LTCSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,8 +181,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QTHCSDLDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QTHCSDLDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QTHCSDLDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TG.Designer.cs">
+      <DependentUpon>TG.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -188,6 +208,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TG.resx">
+      <DependentUpon>TG.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="LAB3DataSet.xsc">
       <DependentUpon>LAB3DataSet.xsd</DependentUpon>
     </None>
@@ -236,6 +259,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QTHCSDLDataSet1.xsc">
+      <DependentUpon>QTHCSDLDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QTHCSDLDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QTHCSDLDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QTHCSDLDataSet1.xss">
+      <DependentUpon>QTHCSDLDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Resources\add.ico" />
   </ItemGroup>
   <ItemGroup>
