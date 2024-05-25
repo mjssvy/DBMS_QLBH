@@ -1,0 +1,70 @@
+Operation stopped...
+
+- Initializing Data Flow Task (Success)
+
+- Initializing Connections (Success)
+
+- Setting SQL Command (Success)
+
+- Setting Source Connection (Success)
+
+- Setting Destination Connection (Success)
+
+- Validating (Error)
+	Messages
+	* Error 0xc0202049: Data Flow Task 3: Failure inserting into the read-only column "diagram_id".
+	 (SQL Server Import and Export Wizard)
+	
+	* Error 0xc0202045: Data Flow Task 3: Column metadata validation failed.
+	 (SQL Server Import and Export Wizard)
+	
+	* Error 0xc004706b: Data Flow Task 3: "Destination 13 - sysdiagrams" failed validation and returned validation status "VS_ISBROKEN".
+	 (SQL Server Import and Export Wizard)
+	
+	* Error 0xc004700c: Data Flow Task 3: One or more component failed validation.
+	 (SQL Server Import and Export Wizard)
+	
+	* Error 0xc0024107: Data Flow Task 3: There were errors during task validation.
+	 (SQL Server Import and Export Wizard)
+	
+
+- Prepare for Execute (Stopped)
+
+- Pre-execute (Stopped)
+
+- Executing (Success)
+
+- Copying to [dbo].[BangGia] (Stopped)
+
+- Copying to [dbo].[ChiTietDonHang] (Stopped)
+
+- Copying to [dbo].[ChiTietDonHangMua] (Stopped)
+
+- Copying to [dbo].[Department] (Stopped)
+
+- Copying to [dbo].[Department1] (Stopped)
+
+- Copying to [dbo].[DonHangBan] (Stopped)
+
+- Copying to [dbo].[DonHangMua] (Stopped)
+
+- Copying to [dbo].[DonViTinh] (Stopped)
+
+- Copying to [dbo].[Employee] (Stopped)
+
+- Copying to [dbo].[HangHoa] (Stopped)
+
+- Copying to [dbo].[KhachHang] (Stopped)
+
+- Copying to [dbo].[NhaCungCap] (Stopped)
+
+- Copying to [dbo].[NhanVien] (Stopped)
+
+- Copying to [dbo].[sysdiagrams] (Stopped)
+
+- Copying to [dbo].[Table] (Stopped)
+
+- Post-execute (Stopped)
+
+
+
